@@ -9,10 +9,9 @@ public class Bullet : MonoBehaviour
     public void Create(int damage , int speed)
     {
         _damage = damage;
-        var dir = transform.right * speed;
+        var dir = transform.right * speed;                 // ÃÑ¾Ë¹æÇâ
         _bulletRigidbody.AddForce(dir, ForceMode.Impulse);
         Destroy(gameObject, 20f);
-
 
     }
 }

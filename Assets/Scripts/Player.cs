@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))                        // 플레이어 움직임
         {
             Move(Vector2.left, _speed);
             _anim.SetBool("LeftWalk", true);
@@ -54,18 +54,18 @@ public class Player : MonoBehaviour
             Fire(_bullet);
             _lastFireTime = Time.time;
         }
-    }
-    private void FixedUpdate()
+    } 
+    private void FixedUpdate()        
     {
 
-        if (Input.GetKeyDown(KeyCode.C) && !isJump)
+        if (Input.GetKeyDown(KeyCode.C) && !isJump)                   //플레이어 공격 설정
         {
             _rigidBody.velocity = Vector3.zero; 
             isJump = true;
             _rigidBody.AddForce(Vector2.up * 6 , ForceMode.Impulse);
         }
     }
-    public void Hit(Vector3 position , int damage)
+    public void Hit(Vector3 position , int damage)                         // Enemy에게 피격시 뒤로 밀려남
     {
         var dir = transform.position - position;
         dir.y = 0;
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         bullet.Create(3, _bulletSpeed);
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision collision)                    // 공중에서 점프 못하게 구현
     {
         if(collision.gameObject.layer == _groundLayer)
         {

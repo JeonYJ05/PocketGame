@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(Mathf.Abs(transform.position.x - Player.transform.position.x) <=  2)
+        if(Mathf.Abs(transform.position.x - Player.transform.position.x) <=  2)        // x값 2이하면 감지  Abs 확인
         {
             IsCanAttack = true;
         }
@@ -31,11 +31,11 @@ public class Enemy : MonoBehaviour
     }
     private void MonsterMove()
     {
-        Vector3 move = Vector3.zero;
+        Vector3 move = Vector3.zero;                //몬스터 움직임 랜덤 설정
         if(MovementFlag == 1)
         {
             move = Vector3.left;
-            transform.localScale = new Vector3(0.02f,0.02f,0.02f);
+            transform.localScale = new Vector3(0.02f,0.02f,0.02f);       
         }
         else if(MovementFlag == 2)
         {
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         }
         transform.position += move * _moveSpeed * Time.deltaTime;
     }
-    private IEnumerator ChangeMove()
+    private IEnumerator ChangeMove()           // 몬스터 움직임 방향전환
     {
         MovementFlag = Random.Range(0, 3);
 
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(ChangeMove());
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)                            // 몬스터 낙하방지를 위해 투명 왼쪽 오른쪽벽 생성 닿을시 반대로 움직임
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("LeftWall"))
         {
