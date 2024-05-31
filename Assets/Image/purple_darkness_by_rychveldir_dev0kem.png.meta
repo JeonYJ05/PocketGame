@@ -1,0 +1,927 @@
+fileFormatVersion: 2
+guid: 321346870561c6f49bb3a9fffed355fb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 123
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7411c061f9d364a859dff496ea3b9c
+      internalID: 1155101099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3fa2111ef6dc504bacf1e0017548bfe
+      internalID: -293240122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed36ac1c90fb6974fa4c652cb44ac8bb
+      internalID: -1492193673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f233212e48d14e408b5ac1c4c6b7689
+      internalID: -477148727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d7e4db970caf042a147f83286bd8a0
+      internalID: -779415208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_5
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa87c3e1f51c17d46bf2a16a2aa6de89
+      internalID: 1609184513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_6
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d6ae960f56485479c860daf85dd4eb
+      internalID: -833965005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_7
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e6c54273be1a64eacd745828e84b3a
+      internalID: 1852892828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_8
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8414d41ee3a6d9047b5d6d77aabad24e
+      internalID: -1015112385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_9
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65d7b4f326f8a947b05fd0da91edb42
+      internalID: -796757621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_10
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9eb850dcb0c02458610c223be54562
+      internalID: 113291751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_11
+      rect:
+        serializedVersion: 2
+        x: 7040
+        y: 2881
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec80e67651835c488d4ca0fc0812376
+      internalID: 1738499997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d46308dfc25ee408524e86ae555790
+      internalID: 1283030174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58ed2d60a2cf03408ad048dc8df3a80
+      internalID: -1932710131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_14
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b862a73353c524c90ea0a5c3f160cc
+      internalID: -1466465433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a202e8203593ba4438645cc567fd455c
+      internalID: 1335938256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_16
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b94221d882f0b42883892f57db1834
+      internalID: 1487716541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_17
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068dd20cc5f3e384bb30d6b883709b1d
+      internalID: -1773322893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_18
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3398bfef6d4016a45991e1aa5c1aa667
+      internalID: -349161155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_19
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e7f6b6acce9cd48b7becb20f33203e
+      internalID: -1286238921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_20
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e226b8e38b57944a9e97fbdaa85018
+      internalID: 1865458526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_21
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8118fca586c624db09978a19e9ec4b
+      internalID: -1467976045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_22
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbd5dda79dc3da4c86145e1a03a48cc
+      internalID: -754697501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_23
+      rect:
+        serializedVersion: 2
+        x: 7040
+        y: 1442
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246962c0838110c42975b9cc930b9381
+      internalID: -2073668239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb96bef7543bbeb44b24e7b6792ff6b5
+      internalID: -1245808043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_25
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59cf6342b1ebd5343b5db12a65524297
+      internalID: -1870728789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_26
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9202cfb53dd72846a9f667fecb77675
+      internalID: -252669257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_27
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1053ce3c9daae414aa51edec28ce3287
+      internalID: 2012723348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_28
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fe2eac63cead541b7a35b9c142594a
+      internalID: -1787143551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_29
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083166e89ddd62241bf8b37ef2943574
+      internalID: 1664676107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_30
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f902476c5ec113944826ab38ba6653fd
+      internalID: 804563353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_31
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed02e2f0e3e63a41b90882c7b64cf0f
+      internalID: -570757584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_32
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff4ad882e1083f40ab5d2426e48f36e
+      internalID: -828879518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_33
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e79cd99c6859c418150ea2a295e9bb
+      internalID: -1216191820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_34
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea917e4032572234c9570724c4098fd1
+      internalID: 1649524805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_darkness_by_rychveldir_dev0kem_35
+      rect:
+        serializedVersion: 2
+        x: 7040
+        y: 3
+        width: 640
+        height: 1436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22c968fc5206894a9e126e3c7d88974
+      internalID: 848849257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      123: 1155101099
+      purple_darkness_by_rychveldir_dev0kem_1: -293240122
+      purple_darkness_by_rychveldir_dev0kem_10: 113291751
+      purple_darkness_by_rychveldir_dev0kem_11: 1738499997
+      purple_darkness_by_rychveldir_dev0kem_12: 1283030174
+      purple_darkness_by_rychveldir_dev0kem_13: -1932710131
+      purple_darkness_by_rychveldir_dev0kem_14: -1466465433
+      purple_darkness_by_rychveldir_dev0kem_15: 1335938256
+      purple_darkness_by_rychveldir_dev0kem_16: 1487716541
+      purple_darkness_by_rychveldir_dev0kem_17: -1773322893
+      purple_darkness_by_rychveldir_dev0kem_18: -349161155
+      purple_darkness_by_rychveldir_dev0kem_19: -1286238921
+      purple_darkness_by_rychveldir_dev0kem_2: -1492193673
+      purple_darkness_by_rychveldir_dev0kem_20: 1865458526
+      purple_darkness_by_rychveldir_dev0kem_21: -1467976045
+      purple_darkness_by_rychveldir_dev0kem_22: -754697501
+      purple_darkness_by_rychveldir_dev0kem_23: -2073668239
+      purple_darkness_by_rychveldir_dev0kem_24: -1245808043
+      purple_darkness_by_rychveldir_dev0kem_25: -1870728789
+      purple_darkness_by_rychveldir_dev0kem_26: -252669257
+      purple_darkness_by_rychveldir_dev0kem_27: 2012723348
+      purple_darkness_by_rychveldir_dev0kem_28: -1787143551
+      purple_darkness_by_rychveldir_dev0kem_29: 1664676107
+      purple_darkness_by_rychveldir_dev0kem_3: -477148727
+      purple_darkness_by_rychveldir_dev0kem_30: 804563353
+      purple_darkness_by_rychveldir_dev0kem_31: -570757584
+      purple_darkness_by_rychveldir_dev0kem_32: -828879518
+      purple_darkness_by_rychveldir_dev0kem_33: -1216191820
+      purple_darkness_by_rychveldir_dev0kem_34: 1649524805
+      purple_darkness_by_rychveldir_dev0kem_35: 848849257
+      purple_darkness_by_rychveldir_dev0kem_4: -779415208
+      purple_darkness_by_rychveldir_dev0kem_5: 1609184513
+      purple_darkness_by_rychveldir_dev0kem_6: -833965005
+      purple_darkness_by_rychveldir_dev0kem_7: 1852892828
+      purple_darkness_by_rychveldir_dev0kem_8: -1015112385
+      purple_darkness_by_rychveldir_dev0kem_9: -796757621
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
