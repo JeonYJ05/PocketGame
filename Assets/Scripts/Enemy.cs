@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
     int MovementFlag = 0;
     public Player Player;
     bool IsCanAttack;
+    public float CurrentHealth;
+    public bool isDeath;
+    public float EnemyCurrentHealth { get { return CurrentHealth; } }
     private void Start()
     {
         StartCoroutine(ChangeMove());
@@ -66,6 +69,24 @@ public class Enemy : MonoBehaviour
     public void Attack(Player player)
     {
         player.Hit(transform.position, 3);
+    }
+    public void TakeDamage(float damage)
+    {
+        if (!isDeath)
+        {
+            CurrentHealth -= damage;
+        }
+        if (CurrentHealth <= 0) Death();
+    }
+    public void Death()
+    {
+        isDeath = true;
+        DestroyEnemy();
+
+    }
+    private void DestroyEnemy()
+    {
+        Destroy(gameObject, 3f);
     }
 }
 

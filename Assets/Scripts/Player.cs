@@ -15,38 +15,34 @@ public class Player : MonoBehaviour
     [SerializeField] private bool isJump;
     private bool isMoving;
     private bool isDetectMove;
-    private Animator _anim;
+    public Animator Anim;
     private int _groundLayer;
     private float _lastFireTime;
 
     private void Start()
     {
-        _anim = GetComponent<Animator>();
+        Anim = GetComponent<Animator>();
         _groundLayer = LayerMask.NameToLayer("Ground");
     }
-    void Update()
+    void FixedUpdate()
     {
-        
         if (Input.GetKey(KeyCode.A))                        // 플레이어 움직임
         {
             Move(Vector2.left, _speed);
-            _anim.SetBool("LeftWalk", true);
-            _anim.SetBool("RightWalk", false);
-            Debug.Log(isMoving);
-            isMoving = true;
+            Anim.SetBool("LeftWalk", true);
+            Anim.SetBool("Idle", false);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             Move(Vector2.right, _speed);
-            _anim.SetBool("LeftWalk", false);
-            _anim.SetBool("RightWalk", true);
-            isMoving = true;
+            Anim.SetBool("RightWalk", true);
+            Anim.SetBool("Idle", false);
         }
-        if(!isMoving)
+        else
         {
-            _anim.SetBool("LeftWalk", false);
-            _anim.SetBool("RightWalk", false);
-            _anim.SetBool("Idle", true);
+            Anim.SetBool("Idle", true);
+            Anim.SetBool("LeftWalk", false);
+            Anim.SetBool("RightWalk", false);
         }
 
         if (Input.GetKey(KeyCode.Mouse0) && Time.time >= _lastFireTime + _fireDelay)
@@ -54,15 +50,15 @@ public class Player : MonoBehaviour
             Fire(_bullet);
             _lastFireTime = Time.time;
         }
-    } 
-    private void FixedUpdate()        
-    {
+
+
 
         if (Input.GetKeyDown(KeyCode.C) && !isJump)                   //플레이어 공격 설정
         {
-            _rigidBody.velocity = Vector3.zero; 
+            _rigidBody.velocity = Vector3.zero;
             isJump = true;
-            _rigidBody.AddForce(Vector2.up * 6 , ForceMode.Impulse);
+            _rigidBody.AddForce(Vector2.up * 6, ForceMode.Impulse);
+
         }
     }
     public void Hit(Vector3 position , int damage)                         // Enemy에게 피격시 뒤로 밀려남

@@ -98,3 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 3
+  Player: {fileID: 0}
+  CurrentHealth: 100
+  isDeath: 0
