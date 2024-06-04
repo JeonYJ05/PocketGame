@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public Animator Anim;
     private int _groundLayer;
     private float _lastFireTime;
+    public GameObject[] LifeIcon;
+    public int Life = 3;
 
     private void Start()
     {
@@ -87,6 +89,13 @@ public class Player : MonoBehaviour
         if(collision.gameObject.layer == _groundLayer)
         {
             isJump = false;
+        }
+    }
+    private void SetHpIcon()
+    {
+        for(int i=0; i<Life; ++i)
+        {
+            LifeIcon[i].SetActive(true);
         }
     }
 }

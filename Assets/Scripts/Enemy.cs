@@ -75,6 +75,7 @@ public class Enemy : MonoBehaviour
         if (!isDeath)
         {
             CurrentHealth -= damage;
+            Player.Life -= 1;
         }
         if (CurrentHealth <= 0) Death();
     }
