@@ -4,98 +4,109 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace YJ.PocketGame
 {
-    [SerializeField] private Rigidbody _rigidBody;
-    [SerializeField] private int _speed;
-    [SerializeField] private int _bulletSpeed;
-    [SerializeField] GameObject _firePoint;
-    [SerializeField] private Bullet _bullet;
-    [SerializeField] float _fireDelay;
-    [SerializeField] private bool isJump;
-    private bool isMoving;
-    private bool isDetectMove;
-    public Animator Anim;
-    private int _groundLayer;
-    private float _lastFireTime;
-    public GameObject[] LifeIcon;
-    public int Life = 3;
 
-    private void Start()
+    public class Player : MonoBehaviour
     {
-        Anim = GetComponent<Animator>();
-        _groundLayer = LayerMask.NameToLayer("Ground");
-    }
-    void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.A))                        // 플레이어 움직임
+        [SerializeField] private Rigidbody _rigidBody;
+        [SerializeField] private int _speed;
+        [SerializeField] private int _bulletSpeed;
+        [SerializeField] GameObject _firePoint;
+        [SerializeField] private Bullet _bullet;
+        [SerializeField] float _fireDelay;
+        [SerializeField] private bool isJump;
+        private bool _invincibility;
+        private bool isMoving;
+        private bool isDetectMove;
+        public Animator Anim;
+        private int _groundLayer;
+        private float _lastFireTime;
+        public int CurrentLife = 3;
+        public int Life { get { return CurrentLife;}}
+
+        private void Start()
         {
-            Move(Vector2.left, _speed);
-            Anim.SetBool("LeftWalk", true);
-            Anim.SetBool("Idle", false);
+            Anim = GetComponent<Animator>();
+            _groundLayer = LayerMask.NameToLayer("Ground");
         }
-        else if (Input.GetKey(KeyCode.D))
+        void FixedUpdate()
         {
-            Move(Vector2.right, _speed);
-            Anim.SetBool("RightWalk", true);
-            Anim.SetBool("Idle", false);
+            if (Input.GetKey(KeyCode.A))                        // 플레이어 움직임
+            {
+                Move(Vector2.left, _speed);
+                Anim.SetBool("LeftWalk", true);
+                Anim.SetBool("Idle", false);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                Move(Vector2.right, _speed);
+                Anim.SetBool("RightWalk", true);
+                Anim.SetBool("Idle", false);
+            }
+            else
+            {
+                Anim.SetBool("Idle", true);
+                Anim.SetBool("LeftWalk", false);
+                Anim.SetBool("RightWalk", false);
+            }
+
+            if (Input.GetKey(KeyCode.Mouse0) && Time.time >= _lastFireTime + _fireDelay)
+            {
+                Fire(_bullet);
+                _lastFireTime = Time.time;
+            }
+
+
+
+            if (Input.GetKeyDown(KeyCode.C) && !isJump)                   //플레이어 공격 설정
+            {
+                _rigidBody.velocity = Vector3.zero;
+                isJump = true;
+                _rigidBody.AddForce(Vector2.up * 6, ForceMode.Impulse);
+
+            }
+            
         }
-        else
+        public void Hit(Vector3 position, int damage)                         // Enemy에게 피격시 뒤로 밀려남
         {
-            Anim.SetBool("Idle", true);
-            Anim.SetBool("LeftWalk", false);
-            Anim.SetBool("RightWalk", false);
-        }
-
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time >= _lastFireTime + _fireDelay)
-        {
-            Fire(_bullet);
-            _lastFireTime = Time.time;
-        }
-
-
-
-        if (Input.GetKeyDown(KeyCode.C) && !isJump)                   //플레이어 공격 설정
-        {
-            _rigidBody.velocity = Vector3.zero;
-            isJump = true;
-            _rigidBody.AddForce(Vector2.up * 6, ForceMode.Impulse);
+            var dir = transform.position - position;
+            dir.y = 0;
+            dir.z = 0;
+            var velocity = dir.normalized * damage;
+            _rigidBody.AddForce(velocity, ForceMode.Impulse);
+            if(!_invincibility)
+            {
+                StartCoroutine(LifeManager());
+            }
 
         }
-    }
-    public void Hit(Vector3 position , int damage)                         // Enemy에게 피격시 뒤로 밀려남
-    {
-        var dir = transform.position - position;
-        dir.y = 0;
-        dir.z = 0;
-        var velocity = dir.normalized * damage;
-        _rigidBody.AddForce(velocity, ForceMode.Impulse);
-    }
-    private void Move(Vector2 direction , int speed)
-    {
-        var dir = speed * Time.deltaTime * new Vector3(direction.x, direction.y, 0);
-        _rigidBody.MovePosition(_rigidBody.position + dir);
-        
-    }
-
-    private void Fire(Bullet prefab)
-    {
-        var bullet = Instantiate(prefab, _firePoint.transform.position, _firePoint.transform.rotation);
-        bullet.Create(3, _bulletSpeed);
-    }
-
-    private void OnCollisionStay(Collision collision)                    // 공중에서 점프 못하게 구현
-    {
-        if(collision.gameObject.layer == _groundLayer)
+        private void Move(Vector2 direction, int speed)
         {
-            isJump = false;
+            var dir = speed * Time.deltaTime * new Vector3(direction.x, direction.y, 0);
+            _rigidBody.MovePosition(_rigidBody.position + dir);
+
         }
-    }
-    private void SetHpIcon()
-    {
-        for(int i=0; i<Life; ++i)
+
+        private void Fire(Bullet prefab)
         {
-            LifeIcon[i].SetActive(true);
+            var bullet = Instantiate(prefab, _firePoint.transform.position, _firePoint.transform.rotation);
+            bullet.Create(3, _bulletSpeed);
+        }
+
+        private void OnCollisionStay(Collision collision)                    // 공중에서 점프 못하게 구현
+        {
+            if (collision.gameObject.layer == _groundLayer)
+            {
+                isJump = false;
+            }
+        }
+       IEnumerator LifeManager()
+        {
+            CurrentLife -= 1;
+            _invincibility = true;
+            yield return new WaitForSeconds(1);
+            _invincibility = false;
         }
     }
 }
