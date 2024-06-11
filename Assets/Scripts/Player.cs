@@ -16,6 +16,7 @@ namespace YJ.PocketGame
         [SerializeField] private Bullet _bullet;
         [SerializeField] float _fireDelay;
         [SerializeField] private bool isJump;
+        public bool isDead;
         private bool _invincibility;
         private bool isMoving;
         private bool isDetectMove;
@@ -99,6 +100,13 @@ namespace YJ.PocketGame
             if (collision.gameObject.layer == _groundLayer)
             {
                 isJump = false;
+            }
+        }
+        private void Dead()
+        {
+           if(Life<= 0)
+            {
+                isDead = true;  
             }
         }
        IEnumerator LifeManager()

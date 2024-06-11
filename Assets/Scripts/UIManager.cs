@@ -12,6 +12,8 @@ namespace YJ.PocketGame
     {
         private bool IsPause;
         public GameObject PauseUI;
+        public GameObject GameOverScene;
+        public Player _player;
 
         private void Start()
         {
@@ -23,10 +25,11 @@ namespace YJ.PocketGame
             {
                 Toggle();
             }
+            GameOver();
         }
         public void Toggle()
         {
-            PauseUI.SetActive(!PauseUI.activeSelf);
+            PauseUI.SetActive(!PauseUI.activeSelf && !GameOverScene.activeSelf);
 
             if(PauseUI.activeSelf)
             {
@@ -35,6 +38,20 @@ namespace YJ.PocketGame
             else
             {
                 Time.timeScale = 1f;
+            }
+           
+        }
+        public void ContinueBtn()
+        {
+            PauseUI.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        public void GameOver()
+        {
+            if (_player.CurrentLife <= 0 && !GameOverScene.activeSelf)
+            {
+                GameOverScene.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
     }
