@@ -45,6 +45,14 @@ namespace YJ.PocketGame
                 Anim.SetBool("RightWalk", true);
                 Anim.SetBool("Idle", false);
             }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                Move(Vector2.up, _speed);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                Move(Vector2.down, _speed);
+            }
             else
             {
                 Anim.SetBool("Idle", true);
@@ -60,13 +68,7 @@ namespace YJ.PocketGame
 
 
 
-            if (Input.GetKeyDown(KeyCode.C) && !isJump)                   //플레이어 공격 설정
-            {
-                _rigidBody.velocity = Vector3.zero;
-                isJump = true;
-                _rigidBody.AddForce(Vector2.up * 6, ForceMode.Impulse);
-
-            }
+           
             
         }
         public void Hit(Vector3 position, int damage)                         // Enemy에게 피격시 뒤로 밀려남
@@ -84,7 +86,7 @@ namespace YJ.PocketGame
         }
         private void Move(Vector2 direction, int speed)
         {
-            var dir = speed * Time.deltaTime * new Vector3(direction.x, direction.y, 0);
+            var dir = speed * Time.deltaTime * new Vector3(direction.x, direction.y , 0);
             _rigidBody.MovePosition(_rigidBody.position + dir);
 
         }
