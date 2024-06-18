@@ -7,6 +7,7 @@ namespace YJ.PocketGame
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
+        [SerializeField] private float _chaseDistance = 4.0f;
 
         int MovementFlag = 0;
         public Player Player;
@@ -20,7 +21,9 @@ namespace YJ.PocketGame
         }
         private void FixedUpdate()
         {
-            if (Mathf.Abs(transform.position.x - Player.transform.position.x) <= 2)        // x값 2이하면 감지  Abs 확인
+            float distance = Vector3.Distance(transform.position, Player.transform.position);
+
+            if (distance <= 1)        // x값 2이하면 감지  Abs 확인
             {
                 IsCanAttack = true;
             }
@@ -32,7 +35,14 @@ namespace YJ.PocketGame
             {
                 Attack(Player);
             }
-            MonsterMove();
+            else if(distance <= _chaseDistance)
+            {
+                ChasePlayer();
+            }
+            else
+            {
+                MonsterMove();
+            }
         }
         private void MonsterMove()
         {
@@ -48,6 +58,20 @@ namespace YJ.PocketGame
                 transform.localScale = new Vector3(-0.02f, 0.02f, 0.02f);
             }
             transform.position += move * _moveSpeed * Time.deltaTime;
+        }
+        private void ChasePlayer()
+        {
+            Vector3 dir = (Player.transform.position - transform.position).normalized;
+            transform.position += dir * _moveSpeed * Time.deltaTime;
+
+            if(dir.x > 0)
+            {
+                transform.localScale = new Vector3(-0.02f, 0.02f, 0.02f);
+            }
+            else
+            {
+                transform.localScale = new Vector3(0.02f, 0.02f, 0.02f); 
+            }
         }
         private IEnumerator ChangeMove()           // 몬스터 움직임 방향전환
         {

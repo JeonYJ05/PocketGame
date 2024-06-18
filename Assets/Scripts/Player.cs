@@ -16,6 +16,7 @@ namespace YJ.PocketGame
         [SerializeField] private Bullet _bullet;
         [SerializeField] float _fireDelay;
         [SerializeField] private bool isJump;
+        public int CurrentLife = 30;
         public bool isDead;
         private bool _invincibility;
         private bool isMoving;
@@ -23,7 +24,6 @@ namespace YJ.PocketGame
         public Animator Anim;
         private int _groundLayer;
         private float _lastFireTime;
-        public int CurrentLife = 3;
         public int Life { get { return CurrentLife;}}
 
         private void Start()
@@ -65,10 +65,6 @@ namespace YJ.PocketGame
                 Fire(_bullet);
                 _lastFireTime = Time.time;
             }
-
-
-
-           
             
         }
         public void Hit(Vector3 position, int damage)                         // Enemy에게 피격시 뒤로 밀려남
@@ -115,7 +111,7 @@ namespace YJ.PocketGame
         {
             CurrentLife -= 1;
             _invincibility = true;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             _invincibility = false;
         }
     }
