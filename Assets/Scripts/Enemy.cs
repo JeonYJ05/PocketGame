@@ -8,12 +8,14 @@ namespace YJ.PocketGame
     {
         [SerializeField] private float _moveSpeed;
         [SerializeField] private float _chaseDistance = 4.0f;
+        [SerializeField] private Transform[] _waypoints;
 
         int MovementFlag = 0;
-        public Player Player;
         bool IsCanAttack;
+        public Player Player;
         public float CurrentHealth;
         public bool isDeath;
+        private int _waypointIndex = 0;
         public float EnemyCurrentHealth { get { return CurrentHealth; } }
         private void Start()
         {
@@ -41,23 +43,22 @@ namespace YJ.PocketGame
             }
             else
             {
-                MonsterMove();
+                MonsterPatrol();
             }
         }
-        private void MonsterMove()
+        private void MonsterPatrol()
         {
-            Vector3 move = Vector3.zero;                //몬스터 움직임 랜덤 설정
-            if (MovementFlag == 1)
+            if (_waypoints.Length == 0) return;
+
+            Transform targetWaypoint = _waypoints[_waypointIndex];
+            Vector3 direction = (targetWaypoint.position - transform.position).normalized;
+            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, _moveSpeed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
             {
-                move = Vector3.left;
-                transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+                _waypointIndex = (_waypointIndex + 1) % _waypoints.Length;
             }
-            else if (MovementFlag == 2)
-            {
-                move = Vector3.right;
-                transform.localScale = new Vector3(-0.02f, 0.02f, 0.02f);
-            }
-            transform.position += move * _moveSpeed * Time.deltaTime;
+
         }
         private void ChasePlayer()
         {
