@@ -10,9 +10,13 @@ public class Title : MonoBehaviour
         Debug.Log("게임시작");
         SceneManager.LoadScene("MainScene");
    }
-   public void QuitBtn()
+    public void QuitBtn()
     {
         Debug.Log("게임 종료");
-        Application.Quit();
+#if UNITY_EDITOR 
+       UnityEditor.EditorApplication.isPlaying = false;
+#else
+       Application.Quit();     
+#endif
     }
 }

@@ -13,7 +13,7 @@ namespace YJ.PocketGame
             _damage = damage;
             var dir = transform.right * speed;                 // 총알방향
             _bulletRigidbody.AddForce(dir, ForceMode.Impulse);
-            DestroyBullet(20);
+            DestroyBullet(5);
         }
         private void DestroyBullet(float time)
         {
@@ -23,10 +23,10 @@ namespace YJ.PocketGame
         {
             if (other.TryGetComponent<Enemy>(out Enemy enemy))
             {
-                enemy.TakeDamage(_damage);
+                enemy.TakeDamage(3);
                 Debug.Log("맞았다");
             }
-            DestroyBullet(0f);
+            DestroyBullet(0);
         }
     }
 }

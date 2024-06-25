@@ -9,6 +9,7 @@ namespace YJ.PocketGame
         [SerializeField] private float _moveSpeed;
         [SerializeField] private float _chaseDistance = 4.0f;
         [SerializeField] private Transform[] _waypoints;
+        [SerializeField] GameObject _gate;
 
         int MovementFlag = 0;
         bool IsCanAttack;
@@ -102,7 +103,6 @@ namespace YJ.PocketGame
             if (!isDeath)
             {
                 CurrentHealth -= damage;
-                Player.CurrentLife -= 1;
             }
             if (CurrentHealth <= 0) Death();
         }
@@ -110,12 +110,17 @@ namespace YJ.PocketGame
         {
             isDeath = true;
             DestroyEnemy();
+            if(_gate != null)
+            {
+                Destroy(_gate);
+            }
 
         }
         private void DestroyEnemy()
         {
             Destroy(gameObject, 3f);
         }
+        
     }
 
 }
