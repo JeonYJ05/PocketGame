@@ -14,7 +14,7 @@ namespace YJ.PocketGame
         {
             if(other.TryGetComponent<Player>(out Player player))
             {
-                SceneManager.LoadScene("empty");
+                SceneManager.LoadScene("BattleScene");
             }
         }
        
