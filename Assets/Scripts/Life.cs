@@ -8,19 +8,19 @@ using UnityEngine.UI;
 
 namespace YJ.PocketGame
 {
-    public class Life : MonoBehaviour
-    {
-        [SerializeField] Text _lifeText;
-        private Player _playerLife;
-
-        private void Awake()
-        {
-            _playerLife = FindObjectOfType<Player>(); 
-        }
-
-        private void Update()
-        {
-            _lifeText.text = " = " + _playerLife.CurrentLife;
-        }
-    }
+    //public class Life : MonoBehaviour
+    //{
+    //    [SerializeField] Text _lifeText;
+    //    private Player _playerLife;
+    //
+    //    private void Awake()
+    //    {
+    //        _playerLife = FindObjectOfType<Player>(); 
+    //    }
+    //
+    //    private void Update()
+    //    {
+    //        _lifeText.text = " = " + _playerLife.CurrentLife;
+    //    }
+    //}
 }
