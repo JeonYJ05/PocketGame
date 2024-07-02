@@ -16,8 +16,8 @@ namespace YJ.PocketGame.Monsters
         public override void Attack()
         {
             
-            int RanNum = rand.Next(0, 1);
-            if (RanNum == 2)
+            int RanNum = rand.Next(0, 2);
+            if (RanNum == 0)
             {
                 Debug.Log("기본공격");
                 base.Attack();
