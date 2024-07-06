@@ -19,14 +19,14 @@ namespace YJ.PocketGame
         {
             IsPause = false;
         }
-        private void Update()
-        {
-            if(Input.GetKeyDown(KeyCode.Escape))
-            {
-                Toggle();
-            }
-            GameOver();
-        }
+       // private void Update()
+       // {
+       //     if(Input.GetKeyDown(KeyCode.Escape))
+       //     {
+       //         Toggle();
+       //     }
+       //     GameOver();
+       // }
         public void Toggle()
         {
             PauseUI.SetActive(!PauseUI.activeSelf && !GameOverScene.activeSelf);
