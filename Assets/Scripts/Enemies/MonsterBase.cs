@@ -12,7 +12,11 @@ namespace YJ.PocketGame.Monsters
     {
         [SerializeField] protected GameObject _bulletPrefab;
         [SerializeField] protected Transform _firePoint;
-        
+
+        private bool isDeath;
+
+        public float CurrentHealth;
+        public float EnemyCurrentHealth { get { return CurrentHealth; } }
         protected virtual void Start()
         {
             StartCoroutine(FireTime());
@@ -44,6 +48,25 @@ namespace YJ.PocketGame.Monsters
                 }
 
             }
+        }
+        private void TakeDamage(float damage)
+        {
+            if(!isDeath)
+            {
+                CurrentHealth -= damage;
+            }
+            if (CurrentHealth < 0) Death();
+        }
+
+        private void Death()
+        {
+            isDeath = true;
+            DestroyEnemy();
+
+        }
+        private void DestroyEnemy()
+        {
+            Destroy(gameObject, 3);
         }
     }
 }
