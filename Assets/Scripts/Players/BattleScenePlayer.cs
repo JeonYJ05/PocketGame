@@ -58,7 +58,7 @@ namespace YJ.PocketGame
                 Anim.SetBool("RightWalk", false);
             }
 
-            if (Input.GetKey(KeyCode.Mouse0) && Time.time >= _lastFireTime + _fireDelay)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= _lastFireTime + _fireDelay)
             {
                 Fire(_bullet);
                 _lastFireTime = Time.time;

@@ -13,12 +13,15 @@ namespace YJ.PocketGame.Monsters
         [SerializeField] protected GameObject _bulletPrefab;
         [SerializeField] protected Transform _firePoint;
 
+        private GameManager gameManager;
+
         private bool isDeath;
 
         public float CurrentHealth;
         public float EnemyCurrentHealth { get { return CurrentHealth; } }
         protected virtual void Start()
         {
+            gameManager = FindObjectOfType<GameManager>();
             StartCoroutine(FireTime());
         }
 
@@ -49,13 +52,15 @@ namespace YJ.PocketGame.Monsters
 
             }
         }
-        private void TakeDamage(float damage)
+        public virtual void TakeDamage(float damage)
         {
             if(!isDeath)
             {
                 CurrentHealth -= damage;
+                gameManager.MyScore += 1;
             }
             if (CurrentHealth < 0) Death();
+            
         }
 
         private void Death()

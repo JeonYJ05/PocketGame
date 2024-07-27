@@ -26,7 +26,10 @@ namespace YJ.PocketGame.Monsters
                 base.Attack();
             }
         }
-
+        public override void TakeDamage(float damage)
+        {
+            base.TakeDamage(damage);
+        }
         private void MeteorAttack()
         {
             int RanNum = rand.Next(0, 2);

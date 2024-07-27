@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YJ.PocketGame.Monsters;
 
 namespace YJ.PocketGame
 {
@@ -28,5 +29,6 @@ namespace YJ.PocketGame
             }
             DestroyBullet(0);
         }
+        
     }
 }
