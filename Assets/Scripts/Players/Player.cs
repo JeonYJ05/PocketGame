@@ -16,15 +16,9 @@ namespace YJ.PocketGame
         [SerializeField] GameObject _firePoint;
         [SerializeField] private Bullet _bullet;
         [SerializeField] float _fireDelay;
-        [SerializeField] int MaxJumpCount;
-        private bool isJumping;
-        private float _jumpTime;
-        private int _jumpCount;
         public int CurrentLife = 30;
         public bool isDead;
         private bool _invincibility;
-        private bool isMoving;
-        private bool isDetectMove;
         public Animator Anim;
         private int _groundLayer;
         private float _lastFireTime;
@@ -34,43 +28,25 @@ namespace YJ.PocketGame
         {
             Anim = GetComponent<Animator>();
             _groundLayer = LayerMask.NameToLayer("Ground");
-            _jumpCount = MaxJumpCount;
         }
         void FixedUpdate()
         {
-            if (Input.GetKey(KeyCode.A))                        // 플레이어 움직임
-            {
-                Move(Vector2.left, _speed);
-                Anim.SetBool("LeftWalk", true);
-                Anim.SetBool("Idle", false);
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                Move(Vector2.right, _speed);
-                Anim.SetBool("RightWalk", true);
-                Anim.SetBool("Idle", false);
-            }
-            else if (Input.GetKey(KeyCode.W))
-            {
-                Move(Vector2.up, _speed);
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                Move(Vector2.down, _speed);
-            }
-            else
-            {
-                Anim.SetBool("Idle", true);
-                Anim.SetBool("LeftWalk", false);
-                Anim.SetBool("RightWalk", false);
-            }
-
+            Move();
             if (Input.GetKey(KeyCode.Mouse0) && Time.time >= _lastFireTime + _fireDelay)
             {
                 Fire(_bullet);
                 _lastFireTime = Time.time;
             }
             
+        }
+
+        public void Move()
+        {
+            float moveX = Input.GetAxis("Horizontal");
+            float moveY = Input.GetAxis("Vertical");
+
+            Vector2 moveDir = new Vector2(moveX, moveY).normalized;
+            transform.Translate(moveDir * _speed * Time.deltaTime);
         }
         public void Hit(Vector3 position, int damage)                         // Enemy에게 피격시 뒤로 밀려남
         {
