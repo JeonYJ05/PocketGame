@@ -27,11 +27,17 @@ namespace YJ.PocketGame.Monsters
 
         public float CurrentHealth;
         public float EnemyCurrentHealth { get { return CurrentHealth; } }
+        private CapsuleCollider _monsterCollider;
+
+
         protected virtual void Start()
         {
             _initialY = transform.position.y;
             gameManager = FindObjectOfType<GameManager>();
+            _monsterCollider = GetComponent<CapsuleCollider>();
+            
             StartCoroutine(FireTime());
+
         }
         private void FixedUpdate()
         {
@@ -73,18 +79,26 @@ namespace YJ.PocketGame.Monsters
         }
         public virtual void TakeDamage(float damage)
         {
-            if(!isDeath)
+            if (!isDeath)
             {
                 CurrentHealth -= damage;
-                gameManager.MyScore += 1;
+                
+
+                if (CurrentHealth < 0) Death();
             }
-            if (CurrentHealth < 0) Death();
             
         }
 
         private void Death()
         {
+            gameManager.MyScore += 1;
             isDeath = true;
+            if (_monsterCollider != null)
+            {
+                _monsterCollider.enabled = false;
+                _moveSpeed = 0;
+                
+            }
             DestroyEnemy();
 
         }

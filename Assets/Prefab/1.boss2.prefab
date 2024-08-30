@@ -164,4 +164,6 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 1191793300494476984, guid: ae02b87f745e110479bec7eebe46aa7b, type: 3}
   _firePoint: {fileID: 7573015411827051470}
   _moveSpeed: 3
-  CurrentHealth: 0
+  _swayAmount: 0.5
+  _swaySpeed: 2
+  CurrentHealth: 5
