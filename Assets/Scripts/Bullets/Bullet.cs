@@ -9,26 +9,42 @@ namespace YJ.PocketGame
     {
         [SerializeField] protected Rigidbody _bulletRigidbody;
         private int _damage;
+        private Vector3 direction;
+
+
         public void Create(int damage, int speed)
         {
             _damage = damage;
-            var dir = transform.forward * speed;                 // 총알방향
-            _bulletRigidbody.AddForce(dir, ForceMode.Impulse);
+            direction = transform.forward;
+            _bulletRigidbody.velocity = direction * speed;
+            DestroyBullet(5);
+        }
+        public void SpecialCreate(int damage, int speed)
+        {
+            _damage = damage;
+            _bulletRigidbody.velocity = direction * speed;
             DestroyBullet(5);
         }
         private void DestroyBullet(float time)
         {
             Destroy(gameObject, time);
         }
+
+        public void SetDirection(Vector3 dir)
+        {
+            direction = dir.normalized;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent<Enemy>(out Enemy enemy))
+            if (other.TryGetComponent<Player>(out Player player))
             {
-                enemy.TakeDamage(3);
-                Debug.Log("맞았다");
+                player.CurrentLife -= 1;
             }
             DestroyBullet(0);
         }
-        
+
+
+
     }
 }

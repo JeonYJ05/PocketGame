@@ -8,41 +8,34 @@ using UnityEngine;
 
 namespace YJ.PocketGame.Monsters
 {
-    public class Monster2 : Monster1
+    public class Monster2 : MonsterBase
     {
-        System.Random rand = new System.Random();
-        [SerializeField] Transform _player;
-
         public override void Attack()
         {
-            
-            int RanNum = rand.Next(0, 2);
-            if (RanNum == 0)
-            {
-                Debug.Log("기본공격");
-                base.Attack();
-            }
-            else
-            {
-                Debug.Log("반사공격");
-                AdditionalAttack();
-            }
-        }
-        private void AdditionalAttack()
-        {
-
-            if(IsFacing())
-            {
-                Debug.Log("데미지입다");
-            }
+            FireBulletsInThreeDirections();
         }
 
-        private bool IsFacing()
+        protected void FireBulletsInThreeDirections()
         {
-            Vector3 dir = (transform.position - _player.position).normalized;  // 몬스터 방햑 벡터
-            Vector3 playerDir = _player.forward; // 플레이어 방향벡터
-            float angle = Vector3.Angle(playerDir, dir);
-            return angle < 45.0f;
+            Vector3[] directions = new Vector3[]
+            {
+                new Vector3(-1, 1, 0).normalized, // 11시
+                new Vector3(-1, -1, 0).normalized,// 7시
+                new Vector3(-1, 0, 0).normalized, // 9시
+            };
+
+            foreach (var direction in directions)
+            {
+                Vector3 spawnPosition = _firePoint.position + direction * 0.2f;
+
+                GameObject bulletInstance = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+                Bullet bullet = bulletInstance.GetComponent<Bullet>();
+                if (bullet != null)
+                {
+                    bullet.SetDirection(direction); // 각 방향으로 설정
+                    bullet.SpecialCreate(3, 15); // 속도와 데미지 설정
+                }
+            }
         }
     }
 }

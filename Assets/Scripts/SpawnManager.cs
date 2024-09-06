@@ -13,7 +13,12 @@ namespace YJ.PocketGame
     {
         [SerializeField] GameObject[] _spawnSpot;
         [SerializeField] GameObject _normalMonster;
+        [SerializeField] GameObject _specialMonster;
+        [SerializeField] GameObject _bossMonster;
+        [SerializeField] int _spawnTimer;
 
+        private bool isTenSpawend = true;
+        private bool isTwentySpawend = true;
         [SerializeField] float _minY;
         [SerializeField] float _maxY;
         private void Start()
@@ -27,7 +32,20 @@ namespace YJ.PocketGame
            
             GameObject SpawnMon = Instantiate(_normalMonster, _spawnSpot[RanY].transform.position , _spawnSpot[RanY].transform.rotation);
             //SpawnMon.GetComponent<MonsterBase>().Initialize(RanY);
-
+            if(GameManager.Instance.MyScore == 10 && isTenSpawend)
+            {
+                Instantiate(_specialMonster, _spawnSpot[1].transform.position, _spawnSpot[3].transform.rotation);
+                Instantiate(_specialMonster, _spawnSpot[3].transform.position, _spawnSpot[3].transform.rotation);
+                Instantiate(_specialMonster, _spawnSpot[5].transform.position, _spawnSpot[3].transform.rotation);
+                isTenSpawend = false;
+            }
+            if(GameManager.Instance.MyScore == 20 && isTwentySpawend)
+            {
+                Instantiate(_specialMonster, _spawnSpot[1].transform.position, _spawnSpot[3].transform.rotation);
+                Instantiate(_bossMonster, _spawnSpot[3].transform.position, _spawnSpot[3].transform.rotation);
+                Instantiate(_specialMonster, _spawnSpot[5].transform.position, _spawnSpot[3].transform.rotation);
+                isTwentySpawend = false;
+            }
             
         }
         private IEnumerator SpawnTime()
@@ -35,9 +53,25 @@ namespace YJ.PocketGame
             while (true)
             {
                 Spawn();
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(_spawnTimer);
             }
         }
+
+        //private void ScoreTen()
+        //{
+        //    Instantiate(_specialMonster, _spawnSpot[1].transform.position, _spawnSpot[3].transform.rotation);
+        //    Instantiate(_specialMonster, _spawnSpot[3].transform.position, _spawnSpot[3].transform.rotation);
+        //    Instantiate(_specialMonster, _spawnSpot[5].transform.position, _spawnSpot[3].transform.rotation);
+        //    TenSpawend = false;
+        //}
+        //
+        //private void ScoreTwenty()
+        //{
+        //    Instantiate(_specialMonster, _spawnSpot[1].transform.position, _spawnSpot[3].transform.rotation);
+        //    Instantiate(_bossMonster, _spawnSpot[3].transform.position, _spawnSpot[3].transform.rotation);
+        //    Instantiate(_specialMonster, _spawnSpot[5].transform.position, _spawnSpot[3].transform.rotation);
+        //    TwentySpawend = false;
+        //}
 
 
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460656335721883616}
   - component: {fileID: 1460656335721883623}
-  - component: {fileID: 1460656335721883617}
+  - component: {fileID: 4934092778752527368}
   m_Layer: 0
   m_Name: 1.boss
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1460656335721883617
+--- !u!114 &4934092778752527368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1460656335721883622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9406f9e89509247b95691dbaa2c215, type: 3}
+  m_Script: {fileID: 11500000, guid: b851e9435a86e114facc329f192eeb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
-  Player: {fileID: 0}
-  CurrentHealth: 100
-  isDeath: 0
+  _bulletPrefab: {fileID: 6457376788883341815, guid: 7d7c3a55ef976424a92606daae2db725, type: 3}
+  _firePoint: {fileID: 0}
+  _moveSpeed: 0
+  _swayAmount: 0.5
+  _swaySpeed: 2
+  CurrentHealth: 0

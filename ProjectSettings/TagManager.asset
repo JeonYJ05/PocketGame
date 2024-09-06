@@ -26,9 +26,9 @@ TagManager:
   - RightWall
   - Enemy
   - Bullet
-  - 
-  - 
-  - 
+  - TopWall
+  - BottomWall
+  - EnemyBullet
   - 
   - 
   - 

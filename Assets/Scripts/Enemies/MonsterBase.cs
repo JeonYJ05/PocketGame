@@ -64,6 +64,11 @@ namespace YJ.PocketGame.Monsters
             FireBullet();
         }
 
+        public virtual void ThreeAttack()
+        {
+            FireBulletsInThreeDirections();
+        }
+
         protected void FireBullet()
         {
             if(_bulletPrefab != null && _firePoint != null)
@@ -72,7 +77,7 @@ namespace YJ.PocketGame.Monsters
                 Bullet bullet = Bulletinstance.GetComponent<Bullet>();
                 if(bullet != null)
                 {
-                    bullet.Create(3, 30);
+                    bullet.Create(3, 10);
                 }
 
             }
@@ -100,11 +105,11 @@ namespace YJ.PocketGame.Monsters
                 
             }
             DestroyEnemy();
-
+            FireBulletsInEightDirections();
         }
         private void DestroyEnemy()
         {
-            Destroy(gameObject, 3);
+            Destroy(gameObject);
         }
 
         public void Initialize(float ranY)
@@ -112,6 +117,54 @@ namespace YJ.PocketGame.Monsters
             transform.position = new Vector3(transform.position.x, ranY, transform.position.z);
         }
 
+        private void FireBulletsInEightDirections()
+        {
+            Vector3[] directions = new Vector3[]
+            {
+                new Vector3(-1, 1, 0).normalized, // 11시
+                new Vector3(0, 1, 0).normalized,  // 12시
+                new Vector3(1, 1, 0).normalized,  // 1시
+                new Vector3(1, 0, 0).normalized,  // 3시
+                new Vector3(1, -1, 0).normalized, // 5시
+                new Vector3(0, -1, 0).normalized, // 6시
+                new Vector3(-1, -1, 0).normalized,// 7시
+                new Vector3(-1, 0, 0).normalized, // 9시
+            };
+        
+            foreach (var direction in directions)
+            {
+                Vector3 spawnPosition = _firePoint.position + direction * 0.2f;
 
+                GameObject bulletInstance = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+                Bullet bullet = bulletInstance.GetComponent<Bullet>();
+                if (bullet != null)
+                {
+                    bullet.SetDirection(direction); // 각 방향으로 설정
+                    bullet.SpecialCreate(3, 15); // 속도와 데미지 설정
+                }
+            }
+        }
+        protected void FireBulletsInThreeDirections()
+        {
+            Vector3[] directions = new Vector3[]
+            {
+                new Vector3(-1, 1, 0).normalized, // 11시
+                new Vector3(-1, -1, 0).normalized,// 7시
+                new Vector3(-1, 0, 0).normalized, // 9시
+            };
+
+            foreach (var direction in directions)
+            {
+                Vector3 spawnPosition = _firePoint.position + direction * 0.2f;
+
+                GameObject bulletInstance = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+                Bullet bullet = bulletInstance.GetComponent<Bullet>();
+                if (bullet != null)
+                {
+                    bullet.SetDirection(direction); // 각 방향으로 설정
+                    bullet.SpecialCreate(3, 15); // 속도와 데미지 설정
+                }
+            }
+        }
     }
 }

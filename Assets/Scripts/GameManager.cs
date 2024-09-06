@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
 
     public Text _textScore;
     private Text _bestTextScore;
@@ -44,6 +45,15 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this; // 인스턴스 설정
+            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 파괴되지 않도록 설정
+        }
+        else
+        {
+            Destroy(gameObject); // 이미 인스턴스가 존재할 경우 중복 생성 방지
+        }
         LoadBestScore();
         UpdateScoreUI();
         _bestScore = PlayerPrefs.GetInt(_name, 0);

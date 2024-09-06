@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 7573015412164312009}
   - component: {fileID: 7573015412164312008}
   - component: {fileID: 7573015412164312011}
-  - component: {fileID: 7573015412164312015}
+  - component: {fileID: -1730197705601274746}
   m_Layer: 19
-  m_Name: 1.boss2
+  m_Name: 1.boss4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ CapsuleCollider:
   m_Height: 74.3125
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7573015412164312015
+--- !u!114 &-1730197705601274746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,12 +158,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7573015412164312021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6200b071b733744b8c579fa1955d22b, type: 3}
+  m_Script: {fileID: 11500000, guid: a923e8b5f01aabd4a965afb58de6fb09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 6457376788883341815, guid: 7d7c3a55ef976424a92606daae2db725, type: 3}
   _firePoint: {fileID: 7573015411827051470}
-  _moveSpeed: 3
+  _moveSpeed: 0
   _swayAmount: 0.5
   _swaySpeed: 2
-  CurrentHealth: 5
+  CurrentHealth: 20
+  _anglepre: -240

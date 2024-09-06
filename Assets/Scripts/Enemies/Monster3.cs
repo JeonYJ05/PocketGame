@@ -4,37 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using System.Collections;
 
 namespace YJ.PocketGame.Monsters
 {
-    public class Monster3 : Monster2
+    public class Monster3 : MonsterBase
     {
-        [SerializeField] private GameObject _meteorPrefab;
-        [SerializeField] private Transform _target;
-        [SerializeField] private Vector3[] _meteorPosition;
+        [SerializeField] float _anglepre;
 
-        System.Random rand = new System.Random();
         public override void Attack()
         {
-            int RanNum = rand.Next(0, 3);
-            if (RanNum == 2)
-            {
-                MeteorAttack();
-            }
-            else
-            {
-                base.Attack();
-            }
+            StartCoroutine(FireBulletFanShape(_anglepre, 30 , 0.1f));
         }
-        public override void TakeDamage(float damage)
+
+        protected IEnumerator FireBulletFanShape(float angle, int bulletCount , float delay)
         {
-            base.TakeDamage(damage);
-        }
-        private void MeteorAttack()
-        {
-            int RanNum = rand.Next(0, 2);
-            GameObject meteor = Instantiate(_meteorPrefab, _meteorPosition[RanNum], Quaternion.identity);
-            meteor.GetComponent<Meteor>().Initialize(_target.position);
+            float halfAngle = angle / 2;
+            for (int i = 0; i <= bulletCount; i++)
+            {
+                float Angle = -halfAngle + (angle / (bulletCount - 1)) * i;
+                Vector3 direction = Quaternion.Euler(0, 0, Angle) * Vector3.up;
+
+                Vector3 spawnPosition = _firePoint.position + direction * 0.2f;
+
+                GameObject bulletInstance = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+                Bullet bullet = bulletInstance.GetComponent<Bullet>();
+                if (bullet != null)
+                {
+                    bullet.SetDirection(direction); // 각 방향으로 설정
+                    bullet.SpecialCreate(3, 15); // 속도와 데미지 설정
+                }
+                yield return new WaitForSeconds(delay);
+            }
         }
     }
 }

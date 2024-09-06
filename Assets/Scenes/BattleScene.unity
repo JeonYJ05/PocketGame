@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 200711299}
   - component: {fileID: 200711301}
   - component: {fileID: 200711300}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 772366590}
   - component: {fileID: 772366592}
   - component: {fileID: 772366591}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,6 +977,9 @@ MonoBehaviour:
   - {fileID: 1938630909}
   - {fileID: 1571468464}
   _normalMonster: {fileID: 7573015412164312021, guid: 1058dc85aafe33d4e9ab7336cd5995c1, type: 3}
+  _specialMonster: {fileID: 7573015412164312021, guid: e74e06c1abb2e6146b6b07c335ad3d94, type: 3}
+  _bossMonster: {fileID: 7573015412164312021, guid: f1fb6130ababff24da3404bdfc0dca91, type: 3}
+  _spawnTimer: 4
   _minY: -20
   _maxY: 20
 --- !u!4 &976302003
@@ -1232,7 +1235,7 @@ GameObject:
   - component: {fileID: 1556243749}
   - component: {fileID: 1556243751}
   - component: {fileID: 1556243750}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1361,7 +1364,7 @@ GameObject:
   - component: {fileID: 1616291271}
   - component: {fileID: 1616291273}
   - component: {fileID: 1616291272}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,6 +1756,10 @@ PrefabInstance:
     - target: {fileID: 249968318373560115, guid: 83f46f54a62174448854789fc52e87e2, type: 3}
       propertyPath: m_SortingLayerID
       value: 1094625461
+      objectReference: {fileID: 0}
+    - target: {fileID: 249968318373560116, guid: 83f46f54a62174448854789fc52e87e2, type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 249968318373560116, guid: 83f46f54a62174448854789fc52e87e2, type: 3}
       propertyPath: m_UseGravity
